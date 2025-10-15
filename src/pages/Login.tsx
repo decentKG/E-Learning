@@ -56,13 +56,13 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
+      {/* <Navbar /> */}
       
       <main className="flex-1 flex items-center justify-center py-12 px-4">
         <div className="w-full max-w-md animate-fade-in">
           {/* Role Selection */}
           <div className="mb-6">
-            <Label className="text-base mb-3 block">I am a:</Label>
+            {/* <Label className="text-base mb-3 block">I am a:</Label> */}
             <div className="grid grid-cols-2 gap-4">
               <button
                 onClick={() => setUserRole('learner')}
@@ -96,9 +96,9 @@ const Login = () => {
 
           <Card className="shadow-strong">
             <CardHeader className="text-center">
-              <div className="w-14 h-14 gradient-primary rounded-xl flex items-center justify-center mx-auto mb-4">
+              {/* <div className="w-14 h-14 gradient-primary rounded-xl flex items-center justify-center mx-auto mb-4">
                 <BookOpen className="w-7 h-7 text-primary-foreground" />
-              </div>
+              </div> */}
               <CardTitle className="text-2xl">Welcome to We Learn</CardTitle>
               <CardDescription>
                 {userRole === 'teacher' 
@@ -195,7 +195,7 @@ const Login = () => {
         </div>
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
