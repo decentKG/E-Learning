@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark blue theme */
+    --background: 215 35% 12%; /* deep blue-gray */
+    --foreground: 210 20% 96%;
+
+    --card: 215 32% 14%;
+    --card-foreground: 210 20% 96%;
+
+    --popover: 215 32% 14%;
+    --popover-foreground: 210 20% 96%;
+
+    --primary: 220 80% 55%; /* vivid blue */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 215 28% 18%;
+    --secondary-foreground: 210 20% 96%;
+
+    --muted: 215 24% 20%;
+    --muted-foreground: 215 12% 70%;
+
+    --accent: 220 80% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --success: 145 60% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 215 22% 28%;
+    --input: 215 22% 28%;
+    --ring: 220 80% 55%;
+
+    --radius: 0.5rem;
+    
+    /* Coursera-style shadows */
+    --shadow-card: 0 2px 4px rgba(0, 0, 0, 0.08);
+    --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-nav: 0 1px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .dark {
+    --background: 215 36% 10%;
+    --foreground: 210 20% 96%;
+
+    --card: 215 32% 12%;
+    --card-foreground: 210 20% 96%;
+
+    --popover: 215 32% 12%;
+    --popover-foreground: 210 20% 96%;
+
+    --primary: 220 80% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 28% 16%;
+    --secondary-foreground: 210 20% 96%;
+
+    --muted: 215 24% 18%;
+    --muted-foreground: 215 12% 70%;
+
+    --accent: 220 80% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --success: 145 60% 42%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 215 22% 24%;
+    --input: 215 22% 24%;
+    --ring: 220 80% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    /* Subtle, eye-catching background gradient */
+    background-image:
+      radial-gradient(1200px 600px at 0% 0%, hsl(220 50% 20%) 0%, rgba(0,0,0,0) 60%),
+      radial-gradient(1200px 600px at 100% 100%, hsl(220 45% 18%) 0%, rgba(0,0,0,0) 60%);
+    background-attachment: fixed;
+  }
+
+  .dark body {
+    /* Subtle gradient for dark mode */
+    background-image:
+      radial-gradient(1000px 500px at 0% 0%, hsl(220 35% 14%) 0%, rgba(0,0,0,0) 60%),
+      radial-gradient(1000px 500px at 100% 100%, hsl(220 35% 12%) 0%, rgba(0,0,0,0) 60%);
+    background-attachment: fixed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-card-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+  
+  .shadow-nav {
+    box-shadow: var(--shadow-nav);
+  }
+}
